@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.2"
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+                      http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+  version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
-	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <persistence-unit name="loja" transaction-type="RESOURCE_LOCAL">
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+      <property name="javax.persistence.jdbc.url"    value="jdbc:h2:mem:test" />
+      <property name="javax.persistence.jdbc.user" value="sa" />
+      <property name="javax.persistence.jdbc.password" value="" />
 
-	<persistence-unit name="loja"
-		transaction-type="RESOURCE_LOCAL">
-		<properties>
-			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" /> <!-- Configuração obrigatória da JPA, name: padrão value: depende do banco que será usado -->
-			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:loja" /> <!-- Além do driver, precisamos configurar a JPA indicando qual é a URL do banco de dados, isto é, onde está o endereço de conexão com o banco de dados. Esse endereço também varia de acordo com o banco de dados. No caso do H2, será "jdbc:h2:mem:loja". Isto é, queremos que o database no H2 se chame loja -->
-			<property name="javax.persistence.jdbc.user" value="sa" />
-			<property name="javax.persistence.jdbc.password" value="" />
-
-			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
-
-
-		</properties>
-	</persistence-unit>
-
+      <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+      <property name="hibernate.show_sql" value="true"/>
+       <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
+     
+    </properties>
+  </persistence-unit>
 </persistence>
+
