@@ -26,7 +26,7 @@ public class CadastroDeProdutos {
 		
 		em.getTransaction().begin();// em pega a transação e inicia a transação 
 		
-		em.persist(celular);
+		dao.cadastrar(celular);
 		
 		em.getTransaction().commit();
 		

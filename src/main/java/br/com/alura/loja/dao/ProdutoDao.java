@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 
 import br.com.alura.loja.modelo.Produto;
 
+/*O único objetivo desta classe é fazer a ligação com o banco de dados*/
 public class ProdutoDao {
 	private EntityManager em; //Defini o EntityManager como atributo
 
